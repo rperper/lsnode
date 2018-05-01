@@ -1,0 +1,267 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/node4',
+1 verbose cli   '/usr/bin/npm-default',
+1 verbose cli   'install',
+1 verbose cli   '-g',
+1 verbose cli   'ghost-cli' ]
+2 info using npm@2.15.11
+3 info using node@v4.8.7
+4 verbose install initial load of /usr/local/lib/package.json
+5 verbose readDependencies loading dependencies from /usr/local/lib/package.json
+6 silly cache add args [ 'ghost-cli', null ]
+7 verbose cache add spec ghost-cli
+8 silly cache add parsed spec Result {
+8 silly cache add   raw: 'ghost-cli',
+8 silly cache add   scope: null,
+8 silly cache add   name: 'ghost-cli',
+8 silly cache add   rawSpec: '',
+8 silly cache add   spec: 'latest',
+8 silly cache add   type: 'tag' }
+9 silly addNamed ghost-cli@latest
+10 verbose addNamed "latest" is being treated as a dist-tag for ghost-cli
+11 info addNameTag [ 'ghost-cli', 'latest' ]
+12 silly mapToRegistry name ghost-cli
+13 silly mapToRegistry using default registry
+14 silly mapToRegistry registry https://registry.npmjs.org/
+15 silly mapToRegistry data Result {
+15 silly mapToRegistry   raw: 'ghost-cli',
+15 silly mapToRegistry   scope: null,
+15 silly mapToRegistry   name: 'ghost-cli',
+15 silly mapToRegistry   rawSpec: '',
+15 silly mapToRegistry   spec: 'latest',
+15 silly mapToRegistry   type: 'tag' }
+16 silly mapToRegistry uri https://registry.npmjs.org/ghost-cli
+17 verbose addNameTag registry:https://registry.npmjs.org/ghost-cli not in flight; fetching
+18 verbose request uri https://registry.npmjs.org/ghost-cli
+19 verbose request no auth needed
+20 info attempt registry request try #1 at 10:02:47 AM
+21 verbose request id 47da9196412fc9f2
+22 http request GET https://registry.npmjs.org/ghost-cli
+23 http 200 https://registry.npmjs.org/ghost-cli
+24 verbose headers { 'content-type': 'application/json; charset=UTF-8',
+24 verbose headers   server: 'UploadServer',
+24 verbose headers   'cache-control': 'max-age=300',
+24 verbose headers   'last-modified': 'Tue, 1 May 2018 9:34:07 GMT',
+24 verbose headers   etag: '"5ae8348f-2163e"',
+24 verbose headers   'x-npm-region': 'US-East',
+24 verbose headers   'content-encoding': 'gzip',
+24 verbose headers   'content-length': '14722',
+24 verbose headers   'accept-ranges': 'bytes',
+24 verbose headers   date: 'Tue, 01 May 2018 14:02:47 GMT',
+24 verbose headers   via: '1.1 varnish',
+24 verbose headers   age: '11972',
+24 verbose headers   connection: 'keep-alive',
+24 verbose headers   'x-served-by': 'cache-jfk8140-JFK',
+24 verbose headers   'x-cache': 'HIT',
+24 verbose headers   'x-cache-hits': '1',
+24 verbose headers   'x-timer': 'S1525183367.219037,VS0,VE1',
+24 verbose headers   vary: 'Accept-Encoding, Accept' }
+25 silly get cb [ 200,
+25 silly get   { 'content-type': 'application/json; charset=UTF-8',
+25 silly get     server: 'UploadServer',
+25 silly get     'cache-control': 'max-age=300',
+25 silly get     'last-modified': 'Tue, 1 May 2018 9:34:07 GMT',
+25 silly get     etag: '"5ae8348f-2163e"',
+25 silly get     'x-npm-region': 'US-East',
+25 silly get     'content-encoding': 'gzip',
+25 silly get     'content-length': '14722',
+25 silly get     'accept-ranges': 'bytes',
+25 silly get     date: 'Tue, 01 May 2018 14:02:47 GMT',
+25 silly get     via: '1.1 varnish',
+25 silly get     age: '11972',
+25 silly get     connection: 'keep-alive',
+25 silly get     'x-served-by': 'cache-jfk8140-JFK',
+25 silly get     'x-cache': 'HIT',
+25 silly get     'x-cache-hits': '1',
+25 silly get     'x-timer': 'S1525183367.219037,VS0,VE1',
+25 silly get     vary: 'Accept-Encoding, Accept' } ]
+26 verbose get saving ghost-cli to /home/user/.npm/registry.npmjs.org/ghost-cli/.cache.json
+27 verbose correctMkdir /home/user/.npm correctMkdir not in flight; initializing
+28 silly addNameTag next cb for ghost-cli with tag latest
+29 silly addNamed ghost-cli@1.7.2
+30 verbose addNamed "1.7.2" is a plain semver version for ghost-cli
+31 silly mapToRegistry name ghost-cli
+32 silly mapToRegistry using default registry
+33 silly mapToRegistry registry https://registry.npmjs.org/
+34 silly mapToRegistry data Result {
+34 silly mapToRegistry   raw: 'ghost-cli',
+34 silly mapToRegistry   scope: null,
+34 silly mapToRegistry   name: 'ghost-cli',
+34 silly mapToRegistry   rawSpec: '',
+34 silly mapToRegistry   spec: 'latest',
+34 silly mapToRegistry   type: 'tag' }
+35 silly mapToRegistry uri https://registry.npmjs.org/ghost-cli
+36 verbose addRemoteTarball https://registry.npmjs.org/ghost-cli/-/ghost-cli-1.7.2.tgz not in flight; adding
+37 verbose addRemoteTarball [ 'https://registry.npmjs.org/ghost-cli/-/ghost-cli-1.7.2.tgz',
+37 verbose addRemoteTarball   'b74d19a8e736959003928b7adde0c6b39ef35856' ]
+38 info retry fetch attempt 1 at 10:02:47 AM
+39 info attempt registry request try #1 at 10:02:47 AM
+40 http fetch GET https://registry.npmjs.org/ghost-cli/-/ghost-cli-1.7.2.tgz
+41 http fetch 200 https://registry.npmjs.org/ghost-cli/-/ghost-cli-1.7.2.tgz
+42 silly fetchAndShaCheck shasum b74d19a8e736959003928b7adde0c6b39ef35856
+43 verbose addTmpTarball /tmp/npm-3288-72b8db7f/registry.npmjs.org/ghost-cli/-/ghost-cli-1.7.2.tgz not in flight; adding
+44 verbose addTmpTarball already have metadata; skipping unpack for ghost-cli@1.7.2
+45 verbose correctMkdir /home/user/.npm correctMkdir not in flight; initializing
+46 silly cache afterAdd ghost-cli@1.7.2
+47 verbose afterAdd /home/user/.npm/ghost-cli/1.7.2/package/package.json not in flight; writing
+48 verbose correctMkdir /home/user/.npm correctMkdir not in flight; initializing
+49 verbose afterAdd /home/user/.npm/ghost-cli/1.7.2/package/package.json written
+50 silly install resolved [ { name: 'ghost-cli',
+50 silly install resolved     version: '1.7.2',
+50 silly install resolved     description: 'Just a CLI manager (for a blogging platform)',
+50 silly install resolved     author: { name: 'Ghost Foundation' },
+50 silly install resolved     homepage: 'http://ghost.org',
+50 silly install resolved     keywords: [ 'ghost', 'cli' ],
+50 silly install resolved     files: [ 'bin', 'lib', 'extensions', 'yarn.lock' ],
+50 silly install resolved     repository:
+50 silly install resolved      { type: 'git',
+50 silly install resolved        url: 'git+https://github.com/TryGhost/Ghost-CLI.git' },
+50 silly install resolved     bugs: { url: 'https://github.com/TryGhost/Ghost-CLI/issues' },
+50 silly install resolved     contributors: 'https://github.com/TryGhost/Ghost-CLI/graphs/contributors',
+50 silly install resolved     license: 'MIT',
+50 silly install resolved     main: 'lib/index.js',
+50 silly install resolved     bin: { ghost: './bin/ghost' },
+50 silly install resolved     scripts:
+50 silly install resolved      { coverage: 'nyc report --reporter=text-lcov | coveralls',
+50 silly install resolved        lint: 'eslint bin lib test extensions',
+50 silly install resolved        release: 'standard-version',
+50 silly install resolved        'test:unit': 'nyc --reporter=html --reporter=text mocha --recursive test/unit extensions/**/test',
+50 silly install resolved        'test:acceptance': 'mocha --timeout 10000 test/acceptance/**/*-spec.js',
+50 silly install resolved        'test:all': 'yarn run test:unit && yarn run test:acceptance',
+50 silly install resolved        test: 'yarn run lint && yarn run test:all' },
+50 silly install resolved     nyc: { exclude: [Object] },
+50 silly install resolved     engines: { node: '^6.9.0 || ^8.9.0' },
+50 silly install resolved     preferGlobal: true,
+50 silly install resolved     dependencies:
+50 silly install resolved      { abbrev: '1.1.1',
+50 silly install resolved        'adm-zip': '0.4.9',
+50 silly install resolved        bluebird: '3.5.1',
+50 silly install resolved        chalk: '2.4.1',
+50 silly install resolved        'cli-table2': '0.2.0',
+50 silly install resolved        debug: '3.1.0',
+50 silly install resolved        decompress: '4.2.0',
+50 silly install resolved        download: '6.2.5',
+50 silly install resolved        execa: '0.10.0',
+50 silly install resolved        'find-plugins': '1.1.7',
+50 silly install resolved        fkill: '5.3.0',
+50 silly install resolved        'fs-extra': '5.0.0',
+50 silly install resolved        'generate-password': '1.4.0',
+50 silly install resolved        'global-modules': '1.0.0',
+50 silly install resolved        got: '8.3.0',
+50 silly install resolved        inquirer: '5.2.0',
+50 silly install resolved        'is-running': '2.1.0',
+50 silly install resolved        listr: '0.14.0',
+50 silly install resolved        lodash: '4.17.10',
+50 silly install resolved        'log-symbols': '2.2.0',
+50 silly install resolved        moment: '2.22.1',
+50 silly install resolved        mysql: '2.15.0',
+50 silly install resolved        ora: '2.0.0',
+50 silly install resolved        'path-is-root': '0.1.0',
+50 silly install resolved        portfinder: '1.0.13',
+50 silly install resolved        prettyjson: '1.2.1',
+50 silly install resolved        'read-last-lines': '1.4.0',
+50 silly install resolved        'replace-in-file': '2.6.4',
+50 silly install resolved        rxjs: '5.5.8',
+50 silly install resolved        semver: '5.5.0',
+50 silly install resolved        shasum: '1.0.2',
+50 silly install resolved        'stat-mode': '0.2.2',
+50 silly install resolved        'strip-ansi': '4.0.0',
+50 silly install resolved        'symlink-or-copy': '1.2.0',
+50 silly install resolved        systeminformation: '3.40.0',
+50 silly install resolved        tail: '1.2.3',
+50 silly install resolved        'update-notifier': '2.5.0',
+50 silly install resolved        validator: '7.2.0',
+50 silly install resolved        yargs: '11.0.0',
+50 silly install resolved        yarn: '1.6.0' },
+50 silly install resolved     devDependencies:
+50 silly install resolved      { chai: '4.1.2',
+50 silly install resolved        coveralls: '3.0.0',
+50 silly install resolved        eslint: '4.19.1',
+50 silly install resolved        'has-ansi': '3.0.0',
+50 silly install resolved        mocha: '5.1.1',
+50 silly install resolved        nyc: '11.7.1',
+50 silly install resolved        proxyquire: '2.0.1',
+50 silly install resolved        sinon: '4.5.0',
+50 silly install resolved        'standard-version': '4.3.0',
+50 silly install resolved        tmp: '0.0.33' },
+50 silly install resolved     'standard-version': { skip: [Object] },
+50 silly install resolved     gitHead: '649bc0e57bd1c915b730eb95dffd931379b27924',
+50 silly install resolved     _id: 'ghost-cli@1.7.2',
+50 silly install resolved     _npmVersion: '5.8.0',
+50 silly install resolved     _nodeVersion: '6.13.0',
+50 silly install resolved     _npmUser: { name: 'acburdine', email: 'austin@acburdine.me' },
+50 silly install resolved     dist:
+50 silly install resolved      { integrity: 'sha512-aThL57JqLoy9yRzUAylr8Te/NJbU8Dw2DngDdpzFd7vZeHz4emIxA4DT4V6GJl9yiecCnsUQyJVfb4CFxMh7Rg==',
+50 silly install resolved        shasum: 'b74d19a8e736959003928b7adde0c6b39ef35856',
+50 silly install resolved        tarball: 'https://registry.npmjs.org/ghost-cli/-/ghost-cli-1.7.2.tgz',
+50 silly install resolved        fileCount: 92,
+50 silly install resolved        unpackedSize: 551300,
+50 silly install resolved        'npm-signature': '-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa6DSNCRA9TVsSAnZWagAA1AAP/3ZRKcK9n6/YYKUW7fy3\nA6UB0kYJN679VSvA4PjAiU77qW/WldKVf1bt4KbqkbkJB5Da0ONY14ZOA93e\nxySNsHTzGCx5kWNqiWc5jMew4a4unkf14nYrB42o0Le0VP1aJDgnlV6fTv7F\nHoy+VhZN1+oG3iN4AOQF1Vq0Txft9jjMCHLdwPJ31Gtuao3SsYkEjhDjU4JM\nyywY5lVN1KpLACjGjV7MMgBixpxA6U8LLrTzdTU9zhiVD7ftVN4OZOO0Reiw\nAWLDGLoRuPsgA0z8wH5NX4vQUWGvN5IHo5PWcO0gJkpDx8/X8bIyvoihwEiO\nlBUxYxX9fBUi24VbEs9ewUJddgh4mdWjmEkopvah2r5Xc6tu59v3Ey9XeBVZ\nQaP/2z3E9D1CIS+Dd31iEN4y4p7/WUeMIwc3qlQU0EhnqlvlsBvLjuiuBjSX\n4APdnztKql9a62HRcFxb61ltv9mUMuVFj3YK5HqZiTaWLf9dCbnAQbW7ML1M\n1oZeS4yhQMt62vEw/iArpC6yYt/HKa6vaEO1ak4f6SpDW+GWi6l4esy6f/MB\nHqiVaSxtcPWBZt8lNTeRPJKw4u2yr+0+PvcnC+3XnTClVelSzrLTVN0uFuUZ\nid7IxXUsMoY7r6dhtH0Y1wrvhqTKOe3W4i+bBS8KcEYRco3MTngrgO1sEo7t\ndiyt\r\n=9AsM\r\n-----END PGP SIGNATURE-----\r\n' },
+50 silly install resolved     maintainers:
+50 silly install resolved      [ [Object],
+50 silly install resolved        [Object],
+50 silly install resolved        [Object],
+50 silly install resolved        [Object],
+50 silly install resolved        [Object],
+50 silly install resolved        [Object],
+50 silly install resolved        [Object] ],
+50 silly install resolved     directories: {},
+50 silly install resolved     _npmOperationalInternal:
+50 silly install resolved      { host: 's3://npm-registry-packages',
+50 silly install resolved        tmp: 'tmp/ghost-cli_1.7.2_1525167244426_0.463410444382756' },
+50 silly install resolved     _shasum: 'b74d19a8e736959003928b7adde0c6b39ef35856',
+50 silly install resolved     _resolved: 'https://registry.npmjs.org/ghost-cli/-/ghost-cli-1.7.2.tgz',
+50 silly install resolved     _from: 'ghost-cli@latest' } ]
+51 info install ghost-cli@1.7.2 into /usr/local/lib
+52 info installOne ghost-cli@1.7.2
+53 verbose installOne of ghost-cli to /usr/local/lib not in flight; installing
+54 verbose correctMkdir /home/user/.npm/_locks correctMkdir not in flight; initializing
+55 verbose lock using /home/user/.npm/_locks/ghost-cli-ed00fe68b178a207.lock for /usr/local/lib/node_modules/ghost-cli
+56 warn engine ghost-cli@1.7.2: wanted: {"node":"^6.9.0 || ^8.9.0"} (current: {"node":"4.8.7","npm":"2.15.11"})
+57 silly install write writing ghost-cli 1.7.2 to /usr/local/lib/node_modules/ghost-cli
+58 verbose unbuild lib/node_modules/ghost-cli
+59 silly gentlyRm /usr/local/lib/node_modules/ghost-cli is being purged from base /usr/local
+60 verbose gentlyRm don't care about contents; nuking /usr/local/lib/node_modules/ghost-cli
+61 verbose tar unpack /home/user/.npm/ghost-cli/1.7.2/package.tgz
+62 verbose tar unpacking to /usr/local/lib/node_modules/ghost-cli
+63 silly gentlyRm /usr/local/lib/node_modules/ghost-cli is being purged
+64 verbose gentlyRm don't care about contents; nuking /usr/local/lib/node_modules/ghost-cli
+65 silly gunzTarPerm modes [ '755', '644' ]
+66 error tar.unpack untar error /home/user/.npm/ghost-cli/1.7.2/package.tgz
+67 verbose unlock done using /home/user/.npm/_locks/ghost-cli-ed00fe68b178a207.lock for /usr/local/lib/node_modules/ghost-cli
+68 verbose fstream_path /usr/local/lib/node_modules/ghost-cli
+69 verbose fstream_type Directory
+70 verbose fstream_class DirWriter
+71 verbose stack Error: EACCES: permission denied, mkdir '/usr/local/lib/node_modules/ghost-cli'
+71 verbose stack     at Error (native)
+72 verbose fstream_stack /usr/lib64/node_modules/npm4/node_modules/fstream/lib/dir-writer.js:35:25
+72 verbose fstream_stack /usr/lib64/node_modules/npm4/node_modules/mkdirp/index.js:47:53
+72 verbose fstream_stack FSReqWrap.oncomplete (fs.js:82:15)
+73 verbose cwd /home/user/proj/lsapi/src/lsnode
+74 error Linux 4.4.57-18.3-default
+75 error argv "/usr/bin/node4" "/usr/bin/npm-default" "install" "-g" "ghost-cli"
+76 error node v4.8.7
+77 error npm  v2.15.11
+78 error path /usr/local/lib/node_modules/ghost-cli
+79 error code EACCES
+80 error errno -13
+81 error syscall mkdir
+82 error Error: EACCES: permission denied, mkdir '/usr/local/lib/node_modules/ghost-cli'
+82 error     at Error (native)
+82 error  { [Error: EACCES: permission denied, mkdir '/usr/local/lib/node_modules/ghost-cli']
+82 error   errno: -13,
+82 error   code: 'EACCES',
+82 error   syscall: 'mkdir',
+82 error   path: '/usr/local/lib/node_modules/ghost-cli',
+82 error   fstream_type: 'Directory',
+82 error   fstream_path: '/usr/local/lib/node_modules/ghost-cli',
+82 error   fstream_class: 'DirWriter',
+82 error   fstream_stack:
+82 error    [ '/usr/lib64/node_modules/npm4/node_modules/fstream/lib/dir-writer.js:35:25',
+82 error      '/usr/lib64/node_modules/npm4/node_modules/mkdirp/index.js:47:53',
+82 error      'FSReqWrap.oncomplete (fs.js:82:15)' ] }
+83 error Please try running this command again as root/Administrator.
+84 verbose exit [ -13, true ]
+85 verbose unbuild lib/node_modules/ghost-cli
+86 silly gentlyRm /usr/local/lib/node_modules/ghost-cli is being purged from base /usr/local
+87 verbose gentlyRm don't care about contents; nuking /usr/local/lib/node_modules/ghost-cli
