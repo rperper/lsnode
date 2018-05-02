@@ -208,6 +208,15 @@ edited is:
 
 You complete your configuration by performing a *Graceful Restart* of the server.
 
+Testing
+-------
+
+Test in your browser by entering the address:port as specified in the 
+configuration of Litespeed.  In the sample above: `http://127.0.0.1:8088`.
+If using Ghost, this should display the Ghost screens.  If not, check the 
+Litespeed error.log and stderr.log.
+
+
 
 Running Different Node Versions
 ===============================
