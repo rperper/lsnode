@@ -202,6 +202,36 @@ wordpress</allow>
       <instances>1</instances>
       <runOnStartUp>1</runOnStartUp>
     </extProcessor>
+    <extProcessor>
+      <type>lsapi</type>
+      <name>nvm_lsnode</name>
+      <address>uds://tmp/lshttpd/lsnode2.sock</address>
+      <maxConns>35</maxConns>
+      <env>LSNODE_ROOT=/home/user/olsws/</env>
+      <env>LSNODE_STARTUP_FILE=hello.js</env>
+      <env>LSAPI_CHILDREN=35</env>
+      <env>LSNODE_NVM_VERSION=v8</env>
+      <env>NVM_DIR=/home/user/.nvm</env>
+      <initTimeout>60</initTimeout>
+      <retryTimeout>0</retryTimeout>
+      <persistConn>1</persistConn>
+      <respBuffer>0</respBuffer>
+      <autoStart>3</autoStart>
+      <path>$SERVER_ROOT/fcgi-bin/nvm_lsnode.bash</path>
+      <backlog>100</backlog>
+      <instances>1</instances>
+      <runOnStartUp>1</runOnStartUp>
+    </extProcessor>
+    <extProcessor>
+      <type>proxy</type>
+      <name>hello</name>
+      <address>uds://tmp/lshttpd/lsnode2.sock</address>
+      <maxConns>10</maxConns>
+      <pcKeepAliveTimeout>60</pcKeepAliveTimeout>
+      <initTimeout>60</initTimeout>
+      <retryTimeout>0</retryTimeout>
+      <respBuffer>0</respBuffer>
+    </extProcessor>
   </extProcessorList>
   <scriptHandlerList>
     <scriptHandler>
@@ -263,6 +293,16 @@ wordpress</allow>
       <setUIDMode>0</setUIDMode>
       <chrootMode>0</chrootMode>
     </virtualHost>
+    <virtualHost>
+      <name>hello</name>
+      <vhRoot>$SERVER_ROOT/hello/</vhRoot>
+      <configFile>$VH_ROOT/hello.xml</configFile>
+      <allowSymbolLink>1</allowSymbolLink>
+      <enableScript>1</enableScript>
+      <restrained>0</restrained>
+      <setUIDMode>0</setUIDMode>
+      <chrootMode>0</chrootMode>
+    </virtualHost>
   </virtualHostList>
   <listenerList>
     <listener>
@@ -281,6 +321,19 @@ wordpress</allow>
       <sslProtocol>31</sslProtocol>
       <enableSpdy>7</enableSpdy>
       <enableQuic>1</enableQuic>
+    </listener>
+    <listener>
+      <name>hello</name>
+      <address>*:8090</address>
+      <secure>1</secure>
+      <vhostMapList>
+        <vhostMap>
+          <vhost>hello</vhost>
+          <domain>*</domain>
+        </vhostMap>
+      </vhostMapList>
+      <keyFile>/home/user/olsws/cert/server.key</keyFile>
+      <certFile>/home/user/olsws/cert/server.crt</certFile>
     </listener>
   </listenerList>
   <vhTemplateList>
