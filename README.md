@@ -50,7 +50,8 @@ We have written a basic Node.js module, named `lsnode.js` (installed by default
 in $SERVER_ROOT/fcgi-bin) which is run as a program by Litespeed Enterprise as a 
 front end to an existing Node.js application.
 
-For now this will not work with OpenLitespeed.
+This agent will not work with OpenLitespeed as it requires the facilities of
+the Enterprise version of Litespeed.
 
 There is a sample httpd_config.xml configuration file included which is 
 referenced here from time to time. It was configured to run the Ghost program 
@@ -137,11 +138,10 @@ defaults:
 
 The remaining fields can be left at defaults.  Press the **Save** button.
 
-The older Litespeed configurator requires that this field be http or https.  
-If the configurator refuses to save your configuration and an error is displayed, 
-enter a temporary value with an http prefix and later manually edit the 
-httpd_config.xml file and update the *address* configuration value.  The correct 
-value will be displayed the next time the screen is updated.
+If the configurator refuses to save your configuration and an error is displayed
+on the Address field, enter a temporary value with an http prefix and later 
+manually edit the httpd_config.xml file and update the *address* configuration 
+value.  The correct value will be displayed the next time the screen is updated.
 
 Configuring the Web Server
 --------------------------
@@ -158,7 +158,7 @@ defaults:
 - Address:  Enter a UDS file name in a directory that the Litespeed user has 
   access to and is appropriate. It must be in the format `uds://directories/file`
   and it must match the value specified in the *LSAPI Application*.
-  An example would be `uds://tmp/lshttpd/lsnode1.sock`
+  In the sample it is `uds://tmp/lshttpd/lsnode1.sock`
 - Max Connections: The sample uses **10**
 - Connection Keepalive Timeout: The sample uses **60**
 - Environment: Need not be set.
@@ -234,10 +234,6 @@ As a prerequisite to using this script, NVM must be installed and using NVM
 install the version of node to be used. Once the prerequites are done,
 Litespeed can be configured as described below.
 
-
-Configuration for a Different Script and Node Version
------------------------------------------------------
-
 The need for a separate node version implies a separate script, and usually
 a separate listening port.  Configuration is quite similar to that described
 above.  This section will supplement the section above using a different example
@@ -252,7 +248,7 @@ Again, begin in the Litespeed configurator press the **Server** tab,
 - Name: Enter any memorable name; in this example, use **nvm_lsnode**
 - Address: Enter a unique UDS file name in a directory that the Litespeed 
   user has access to and is appropriate. An example would be 
-  `uds://tmp/lshttpd/lsnode2.sock` (which is different from the prior example).
+  `uds://tmp/lshttpd/lsnode2.sock` (which is different from the prior sample).
 - Max Connections:  The sample uses **35**.
 - Environment: To use NVM and the Litespeed Node.js and NVM agents, specify 
   the following environment variables:
@@ -342,7 +338,7 @@ Press the **General** tab and press the **Edit** button.  The only field to be
 edited is:
 - Document Root: Most users will enter: **$VH_ROOT/html**  You may need to create
   this directory manually.  In the example the *Virtual Host Root* which can be 
-  displayed in the *Basic* tab is $SERVER_ROOT/DEFAULT.  Thus you may need to 
+  displayed in the *Basic* tab is *$SERVER_ROOT/hello*.  Thus you may need to 
   go into this directory and manually create the **html** subdirectory.  This 
   is rarely necessary with the initial virtual host, but may be necessary for
   subsequent ones.
