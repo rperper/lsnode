@@ -108,7 +108,12 @@ defaults:
 - Name: Enter any memorable name, but a common one is `lsnode_start`
 - Address: Enter a UDS file name in a directory that the Litespeed user has 
   access to and is appropriate. It must be in the format `uds://directories/file`
-  An example would be `uds://tmp/lshttpd/lsnode1.sock`
+  An example would be `uds://tmp/lshttpd/lsnode1.sock`  The older configuration
+  requires that this field be http or https.  If the configuration can't be saved
+  and an error displayed, enter a temporary value with an http prefix and later 
+  edit the httpd_config.xml file and update the *address* configuration value 
+  manually.  The correct value will be displayed the next time the screen is
+  updated.
 - Max Connections:  Enter any non-zero number which would be appropriate for the
   maximum number of connections.  The sample uses **35**.
 - Environment: There are three environment variables that need to be set to run
@@ -188,11 +193,55 @@ The fields to be specified:
 All other fields can be left at their defaults. Press the **Save** button to 
 save your definition.
 
+Press the **General** tab and press the **Edit** button.  The only field to be
+edited is:
+- Document Root: Most users will enter: **$VH_ROOT/html**  You may need to create
+  this directory manually.  In the example the *Virtual Host Root* which can be 
+  displayed in the *Basic* tab is $SERVER_ROOT/DEFAULT.  Thus you may need to 
+  go into this directory and manually create the **html** subdirectory.  This 
+  is rarely necessary with the initial virtual host, but may be necessary for
+  subsequent ones.
+
 You complete your configuration by performing a *Graceful Restart* of the server.
 
 
+Running Different Node Versions
+===============================
+
+If you have a need to run multiple versions of the node program because you are
+serving multiple, separate applications you may already be familiar with the
+facility NVM (Node Version Manager): https://github.com/creationix/nvm
+
+NVM does its magic by modifying bash and that may be a bit problematic when
+attempting to start scripts using the shebang (hashbang) of `#!/usr/bin/env node`
+as this does not allow the bash control necessary to run NVM.
+
+Thus a prequel script: `nvm_lsnode.bash` is provided which will:
+   - Properly source the NVM environment.  The required environment variable 
+     `NVM_DIR` must be specified in the *External App*, *Environment* definition.
+   - Using the required environment variable `LSNODE_NVM_VERSION`, again
+     specified in the *External App*, *Environment* definition, run the
+     NVM to setup for executing the specified version of node.
+   - Run the `lsnode.js` script to execute the process specified above.
+
+As a prerequisite to using this script, you must install NVM and using NVM
+install the version of node you wish to use. Once the prerequites are done,
+Litespeed can be configured as described below.
+
+
+Configuration for a Different Script and Node Version
+-----------------------------------------------------
+
+The need for a separate node version implies a separate script, and usually
+a separate listening port.  Configuration is quite similar to that described
+above.
+
 Notes
 =====
+
+As with most issues in Litespeed the starting point to look for any problems
+is in the error.log in the $SERVER_ROOT/logs directory.  Also note that any 
+problems in subtasks may be written to stderr.log in that same directory.
 
 When the server starts it will create a separate process specifically for 
 processing Node.js requests. In the process list it is named 

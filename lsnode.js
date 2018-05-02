@@ -1,4 +1,8 @@
 #!/usr/bin/env node
+/**
+ * This script uses the default version of node.  To change the default before
+ * running this script, see the NVM lsnode prequel script: nvm_lsnode.bash
+ */
 /*
  * Copyright 2002-2018 Lite Speed Technologies Inc, All Rights Reserved.
  * LITE SPEED PROPRIETARY/CONFIDENTIAL.
@@ -120,7 +124,6 @@ function setupEnvironment(/*options*/) {
         try 
         {
             process.chdir(process.env.LSNODE_ROOT);
-            console.log("Set directory to: " + process.env.LSNODE_ROOT);
         }
         catch (err)
         {
@@ -142,27 +145,20 @@ function loadApplication() {
         if (process.env.LSNODE_STARTUP_FILE.slice(0,0) == '/')
         {
             startupFile = process.env.LSNODE_STARTUP_FILE;
-            console.log("Starting fully qualified LSNODE_STARTUP_FILE: " + 
-                        startupFile);
         }
         else if (process.env.LSNODE_ROOT != undefined)
         {
             startupFile = process.env.LSNODE_ROOT + '/' + 
                           process.env.LSNODE_STARTUP_FILE;
-            console.log("Starting LSNODE_ROOT + unqualfied LSNODE_STARTUP_FILE: " + 
-                        startupFile);
         }
         else 
         {
             startupFile = process.cwd() + '/' + process.env.LSNODE_STARTUP_FILE;
-            console.log("Starting cwd + unqualfied LSNODE_STARTUP_FILE: " + 
-                        startupFile);
         }
     }
     else
     {
         startupFile = process.cwd() + '/app.js'; // can change default directory first
-        console.log("Starting default application: " + startupFile);
     }
     require(startupFile);
 }
